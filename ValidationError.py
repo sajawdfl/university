@@ -1,6 +1,6 @@
 from CustomError import CustomError
 
-class validationError(CustomError):
+class ValidationError(CustomError):
     pass
 
     def print(self):
