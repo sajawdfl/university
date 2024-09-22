@@ -40,11 +40,13 @@ class Course:
     
     
     
-    def new_course(self,name,unit):
-        new_course = Course(name,unit)
+    def add_course(name,unit):
+        new_course = Course()
+        new_course.name = name
+        new_course.unit = unit
         course_data = {'course_name' : new_course.name , 'course_unit' : new_course.unit}
         course_list.append(course_data)        
-        print(f'{new_course.name} with {new_course.unit} units added to course_list successfully')
+        print(f'{new_course.name} with {new_course.unit} units added to course list successfully')
         
     
     

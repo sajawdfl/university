@@ -11,6 +11,10 @@ class University(ABC):
         print(f'{self.name} university')
         
     @abstractmethod
+    def add_university(university_name,university_code):
+        pass
+        
+    @abstractmethod
     def payment(self):
         pass
     
