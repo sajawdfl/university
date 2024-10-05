@@ -1,4 +1,4 @@
-from CustomError import CustomError
+from errors.CustomError import CustomError
 
 class UnitError(CustomError):
     pass

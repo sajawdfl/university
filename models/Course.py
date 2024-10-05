@@ -1,11 +1,12 @@
-from UnitError import UnitError
+from errors.UnitError import UnitError
 
 
-course_list = []
 class Course:
+    course_list = []
     def __init__(self):
         self.__name = ''
         self.__unit = 0
+        self.__id = 0
         
     @property    
     def name(self):
@@ -32,7 +33,19 @@ class Course:
         
     @unit.deleter
     def unit(self):
-        del self.__unit    
+        del self.__unit 
+        
+    @property    
+    def id(self):
+        return self.__id
+
+    @id.setter
+    def id(self,id):
+        self.__id = id
+        
+    @id.deleter
+    def id(self):
+        del self.__id
     
         
     def __str__(self):
@@ -40,13 +53,13 @@ class Course:
     
     
     
-    def add_course(name,unit):
-        new_course = Course()
-        new_course.name = name
-        new_course.unit = unit
-        course_data = {'course_name' : new_course.name , 'course_unit' : new_course.unit}
-        course_list.append(course_data)        
-        print(f'{new_course.name} with {new_course.unit} units added to course list successfully')
+    # def add_course(name,unit):
+    #     new_course = Course()
+    #     new_course.name = name
+    #     new_course.unit = unit
+    #     course_data = {'course_name' : new_course.name , 'course_unit' : new_course.unit}
+    #     Course.course_list.append(course_data)        
+    #     print(f'{new_course.name} with {new_course.unit} units added to course list successfully')
         
     
     
