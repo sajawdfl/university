@@ -2,12 +2,14 @@ from abc import ABC , abstractmethod
 
 # student_list = []
 class University(ABC):
-    university_list = []
+    # university_list = []
     student_list = []
     course_list = []
     def __init__(self):
         self.__name = ''
         self.__university_code = 0
+        self.university_list = []
+        self.type = ''
         
     def __str__(self):
         print(f'{self.name} university')

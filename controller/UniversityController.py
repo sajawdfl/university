@@ -4,7 +4,7 @@ from models.University import University
 from getInput import getInput
 import configparser
 import pyodbc
-from dao import UniversityDAOSQL
+from dao.UniversityDAOSQL import UniversityDAOSQL
 
 
 # config = configparser.ConfigParser()
@@ -20,7 +20,7 @@ from dao import UniversityDAOSQL
 # cursor = conn.cursor()
 
 
-
+dao =UniversityDAOSQL()
 
 
 new_university = None
@@ -29,8 +29,10 @@ def getUniversityType():
         university_type = int(getInput('1 : Azad   2 : Sarasari 0 : Exit\nselect your university type:'))
         if university_type==1:
             new_university=Azad()
+            new_university.type = 'azad'
         elif university_type==2:
             new_university=Sarasari()
+            new_university.type = 'sarasari'
         else:
             continue
         
@@ -54,9 +56,9 @@ def confirmUniversity(university):
             continue
 
 def addUniversity(university):
-    university_data = {'name' : university.__name , 'code' : university.__code}
+    university_data = {'name' : university.__name , 'code' : university.__code , 'type' : university.type}
     university.university_list.append(university_data)
-    UniversityDAOSQL().insert_university(university.university_list)
+    dao.insert_university(university)
     
     print(f'university {university.__name} with university code ; {university.__code} added successfully .')
     

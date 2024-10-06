@@ -13,9 +13,9 @@ class Sarasari(University):
     def payment(self):
         return ('10000000 RLS')
     
-    def add_university(university_name, university_code):
-        new_university = Sarasari(university_name,university_code)
-        university_data = {'university_name' : new_university.name , 'university_code' : new_university.university_code , 'university_type' :'sarasari'}
+    def add_university(university_name, university_code,type):
+        new_university = Sarasari(university_name,university_code,type)
+        university_data = {'university_name' : new_university.name , 'university_code' : new_university.university_code , 'university_type' :University.type}
         University.university_list.append(university_data)
         print(f'{new_university.name} university added successfully')
     
