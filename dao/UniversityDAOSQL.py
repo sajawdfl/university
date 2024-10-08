@@ -1,5 +1,3 @@
-import pyodbc
-import configparser
 from dao.UniversityDAO import UniversityDAO
 from connectionUtils import connectionUtils
 # cursor = conn.cursor()
