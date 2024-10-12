@@ -7,7 +7,7 @@ class University(ABC):
     course_list = []
     def __init__(self):
         self.__name = ''
-        self.__university_code = 0
+        self.__code = 0
         self.university_list = []
         self.student_list = []
         self.type = ''
@@ -29,15 +29,15 @@ class University(ABC):
         
     @property    
     def code(self):
-        return self.__university_code
+        return self.__code
     
     @code.setter
     def code(self,code):
-        self.__university_code = code
+        self.__code = code
         
     @code.deleter    
     def code(self):
-        del self.__university_code
+        del self.__code
         
             
         

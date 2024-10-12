@@ -20,7 +20,7 @@ from dao.UniversityDAOSQL import UniversityDAOSQL
 # cursor = conn.cursor()
 
 
-dao =UniversityDAOSQL()
+dao = UniversityDAOSQL()
 
 
 new_university = None

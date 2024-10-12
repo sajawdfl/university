@@ -7,6 +7,7 @@ class Course:
         self.__name = ''
         self.__unit = 0
         self.__id = 0
+        self.course_list = []
         
     @property    
     def name(self):

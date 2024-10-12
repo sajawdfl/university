@@ -63,7 +63,7 @@ while True:
             getStudentFamily(new_student)
             if confirmStudent(new_student):
                 addStudent(new_student)
-                print(University.student_list)
+                print(new_student.student_list)
         elif action == '2':
             showUniversityCourse()
             course_id = selectCourse()
@@ -89,7 +89,6 @@ while True:
             getCourseId(new_course)
             if confirmCourse(new_course):
                 addCourse(new_course)
-                showUniversityCourse()
         elif action == '3':
             print(search_student())
 

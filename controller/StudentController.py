@@ -2,8 +2,8 @@ from models.Student import Student #, student_list
 from national_card import national_card
 from models.University import University
 from errors import NationalNumberError , ValidationError
-
 from getInput import getInput
+from dao.StudentDAOSQL import StudentDAOSQL
 
 
 
@@ -41,10 +41,12 @@ def confirmStudent(student):
             return False
         else:
             continue
-        
+
+dao = StudentDAOSQL()        
 def addStudent(student):
     student_data = {'name' : student.__name , 'family' : student.__family , 'national_code' : student.__national_code}
-    University.student_list.append(student_data)
+    student.student_list.append(student_data)
+    dao.insert_student(student)
     # print(student_list)
     print(f'{student.__name} {student.__family} registered successfully .')
     

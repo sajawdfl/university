@@ -1,10 +1,11 @@
-student_list = []
 class Student:
+    student_list = []
     course_list = []
     def __init__(self):
         self.__name = ''
         self.__family = ''
         self.__national_code = 0
+        self.student_list = []
         
     @property
     def name(self):

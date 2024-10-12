@@ -2,6 +2,7 @@ from models.Course import Course
 from models.University import University
 from models.Student import Student
 from getInput import getInput
+from dao.CourseDAOSQL import CourseDAOSQL
 
 def createCourse():
     course = Course()
@@ -21,17 +22,18 @@ def getCourseId(course):
     
 def confirmCourse(course):
     while True:
-        c = int(getInput(f'Do you want to add {course.__name} course with this course id : {course.__id} ? \n1: Yes 2:No\n '))
-        if c == 1:
+        confirmation = int(getInput(f'Do you want to add {course.__name} course with this course id : {course.__id} ? \n1: Yes 2:No\n '))
+        if confirmation == 1:
             return True
-        elif c ==2:
+        elif confirmation ==2:
             return False
         else:
             continue
-
+dao = CourseDAOSQL()
 def addCourse(course):
     course_data = {'name' : course.__name , 'unit' : course.__unit , 'id' : course.__id}
-    University.course_list.append(course_data)
+    course.course_list.append(course_data)
+    dao.insert_course(course)
     print(f'{course.__name} course   added successfully .')
 
 
